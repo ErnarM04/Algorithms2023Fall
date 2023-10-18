@@ -31,5 +31,4 @@ int main(){
         }else left = mid + 1;
     }
     cout <<  ans;
-    return 0;
 }

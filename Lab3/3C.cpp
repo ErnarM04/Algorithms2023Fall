@@ -7,7 +7,7 @@ int binary_search(vector<int> array, int target){
     int right = array.size() - 1;
     int res = -1;
     while (left <= right){
-        int mid = left + (right - left) / 2;
+        int mid = (right + left) / 2;
         if (array[mid] <= target){
             res = mid;
             left = mid + 1;
@@ -21,7 +21,7 @@ int binary_search(vector<int> array, int target){
 int ans(vector<int> w, int l, int r){
     return binary_search(w, r) - binary_search(w, l - 1);
 }
-
+// bin(w,r1) - bin(w, l1-1) + bin(w,r2) - bin(w,l2-1)
 int main(){
     int n, k;
     cin >> n >> k;

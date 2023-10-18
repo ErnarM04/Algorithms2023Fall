@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int binay_seach_first(int a[], int taget, int n){ // increase
+int increase(int a[], int taget, int n){
 	int left = 0, right = n - 1;
 	while (left <= right){
 		int mid = left + (right - left) / 2;
@@ -12,7 +12,7 @@ int binay_seach_first(int a[], int taget, int n){ // increase
 	return -1;
 }
 
-int binay_seach_second(int a[], int taget, int n){ // decrease
+int decrease(int a[], int taget, int n){
 	int left = 0, right = n - 1;
 	while (left <= right){
 		int mid = left + (right - left) / 2;
@@ -24,8 +24,6 @@ int binay_seach_second(int a[], int taget, int n){ // decrease
 }
 
 int main(){
-	// freopen("input.txt", "r", stdin);
-	// freopen("output.txt", "w", stdout);
 	int n, x, y, ind;
 	cin >> n;
 	int a[n];
@@ -39,8 +37,8 @@ int main(){
 	}
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < x; j++) {
-			if (j % 2 == 0) ind = binay_seach_second(a2[j], a[i], y);
-            else ind = binay_seach_first(a2[j], a[i], y);
+			if (j % 2 == 0) ind = decrease(a2[j], a[i], y);
+            else ind = increase(a2[j], a[i], y);
 			if (ind != -1){
 				cout << j << " " << ind << endl;
 				break;
