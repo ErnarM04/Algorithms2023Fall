@@ -1,23 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int increase(int a[], int taget, int n){
+int increase(int a[], int target, int n){
 	int left = 0, right = n - 1;
 	while (left <= right){
 		int mid = left + (right - left) / 2;
-		if (taget < a[mid]) right = mid - 1;
-		else if (taget > a[mid]) left = mid + 1;
+		if (target < a[mid]) right = mid - 1;
+		else if (target > a[mid]) left = mid + 1;
 		else return mid;
 	}
 	return -1;
 }
 
-int decrease(int a[], int taget, int n){
+int decrease(int a[], int target, int n){
 	int left = 0, right = n - 1;
 	while (left <= right){
 		int mid = left + (right - left) / 2;
-		if (taget > a[mid]) right = mid - 1;
-		else if (taget < a[mid]) left = mid + 1;
+		if (target > a[mid]) right = mid - 1;
+		else if (target < a[mid]) left = mid + 1;
 		else return mid;
 	}
 	return -1;
@@ -42,7 +42,7 @@ int main(){
 			if (ind != -1){
 				cout << j << " " << ind << endl;
 				break;
-			}else if(ind == -1 && j == x - 1){
+			}else if(ind == -1){
 				cout << -1 << endl;
 				break;
 			}

@@ -18,7 +18,7 @@ bool checker(int x){
 int binary_search(){
     int l = 0, r = 1e9, res = 0;
     while(l <= r){
-        int mid = l + (r - l) / 2;
+        int mid = (r + l) / 2;
         if(checker(mid)){
             res = mid;
             r = mid - 1;
